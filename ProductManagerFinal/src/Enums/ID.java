@@ -1,0 +1,10 @@
+package Enums;
+
+public enum ID {
+    CEDULA_CIUDADANIA,
+    TARJETA_IDENTIDAD,
+    PASAPORTE,
+    CEDULA_EXTRANJERIA,
+    REGISTRO_CIVIL,
+    DISTRIBUIDORA_ID
+}
