@@ -1,8 +1,10 @@
 package Users;
 
 import Enums.ID;
+import lombok.Getter;
 
 public abstract class People {
+    @Getter
     private String
     nombre, identificacion, email, password;
     private  ID TipoDeId;
@@ -13,5 +15,8 @@ public abstract class People {
         this.email = email;
         this.password = password;
         TipoDeId = tipoDeId;
+    }
+
+    public void menu(){
     }
 }

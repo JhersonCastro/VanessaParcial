@@ -1,13 +1,18 @@
 package InterfacesGraficas;
 
 
+
 import lombok.Getter;
 
 import javax.swing.*;
 
 public class SignUpForm {
-    @Getter
+
     private JPanel panel1;
+
+    public JPanel getPanel1() {
+        return panel1;
+    }
 
     private JButton registrarseButton;
     private JButton salirButton;

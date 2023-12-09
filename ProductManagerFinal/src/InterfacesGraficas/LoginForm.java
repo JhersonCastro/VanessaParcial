@@ -11,6 +11,7 @@ public class LoginForm {
     private JButton confirmarButton;
     private JButton button1;
     private JLabel lblCurrentOperation;
+
     public LoginForm() {
         button1.addMouseListener(new MouseAdapter() {
             @Override
