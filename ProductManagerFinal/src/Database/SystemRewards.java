@@ -6,7 +6,7 @@ import Users.People;
 import javax.xml.crypto.Data;
 import java.util.Optional;
 
-class SystemRewards {
+public class SystemRewards {
     private Database data;
     public SystemRewards(Database database) {
         data = database;

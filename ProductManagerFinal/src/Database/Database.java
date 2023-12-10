@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Database {
     private @Getter ArrayList<People> users;
-    SystemRewards systemRewards;
+    private SystemRewards systemRewards;
     public Database(){
         users = new ArrayList<>();
         systemRewards = new SystemRewards(this);

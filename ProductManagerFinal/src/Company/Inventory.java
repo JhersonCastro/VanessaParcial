@@ -2,6 +2,7 @@ package Company;
 
 import Exceptions.EmptyTextField;
 import Exceptions.ResourceNotFound;
+import Users.Distributor;
 import lombok.Getter;
 import Company.Product;
 
@@ -9,13 +10,15 @@ import java.util.ArrayList;
 
 public class Inventory {
     private final int capacidad = 50;
-
     private @Getter ArrayList<Product> products;
-
+    private ArrayList<Distributor> distributors;
     public Inventory() {
         this.products = new ArrayList<>();
+        products = new ArrayList<>();
     }
-
+    public void addDistributor(Distributor distributor){
+        distributors.add(distributor);
+    }
     public static Product createProduct(String ID, String name, String description, String price, String amount) throws NumberFormatException, EmptyTextField {
         double priceParse;
         int amountParse;

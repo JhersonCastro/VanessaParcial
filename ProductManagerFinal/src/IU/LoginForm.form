@@ -72,6 +72,12 @@
         <properties/>
         <border type="none"/>
         <children>
+          <component id="1d816" class="javax.swing.JButton" binding="button2" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Button"/>
+            </properties>
+          </component>
           <component id="19c2e" class="javax.swing.JButton" binding="confirmarButton" default-binding="true">
             <constraints/>
             <properties>

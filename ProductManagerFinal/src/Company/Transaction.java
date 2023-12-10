@@ -1,5 +1,6 @@
 package Company;
 
+import Users.Client;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import java.util.Date;
 public class Transaction {
     private Product product;
     private Date date;
+    private Client client;
 
     @Override
     public String toString() {
@@ -18,9 +20,10 @@ public class Transaction {
                 '}';
     }
 
-    public Transaction(Product product){
+    public Transaction(Product product, Client client){
         this.product = product;
         Calendar calendar = Calendar.getInstance();
         this.date = calendar.getTime();
+        this.client = client;
     }
 }

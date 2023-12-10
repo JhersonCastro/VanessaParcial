@@ -6,6 +6,7 @@ import Enums.ID;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.swing.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,7 +20,7 @@ public class Client extends People implements IUser{
         this.saldo += saldo;
     }
     public void addTransactions(Product product){
-        transactions.add(new Transaction(product));
+        transactions.add(new Transaction(product, this));
     }
     public Client(String nombre, String identificacion, String email, String password, ID TipoDeId) {
         super(nombre, identificacion, email, password, TipoDeId);
@@ -37,18 +38,16 @@ public class Client extends People implements IUser{
                 '}';
     }
 
-    @Override
-    public void login(String email, String password) {
-
-    }
 
     @Override
     public void logout() {
-
+        String lblExit = "Se ha salido como cliente";
+        JOptionPane.showMessageDialog(null, lblExit,
+                "Salida cliente", JOptionPane.INFORMATION_MESSAGE);
     }
 
     @Override
     public void updateProfile(String name, String email) {
-
+        //TODO: CODE HERE
     }
 }

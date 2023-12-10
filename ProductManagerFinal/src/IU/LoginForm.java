@@ -21,6 +21,7 @@ public class LoginForm {
     private JButton confirmarButton;
     private JButton button1;
     private JLabel lblCurrentOperation;
+    private JButton button2;
 
     public LoginForm(Database database, Inventory inventory) {
         button1.addMouseListener(new MouseAdapter() {
@@ -49,30 +50,29 @@ public class LoginForm {
                 People people = database.logIn(txtEmail.getText(), Arrays.toString(txtPassword.getPassword()));
                 if(people != null){
 
-                SwingUtilities.invokeLater(new Runnable() {
-                    public void run() {
+                    SwingUtilities.invokeLater(new Runnable() {
+                        public void run() {
 
-                        JDialog dialog = new JDialog();
-                        dialog.setTitle("Login");
-                        if(people.getClass().equals(Client.class)){
-                            UIUser user = new UIUser((Client) people, inventory);
-                            dialog.setContentPane(user.getPanel1());
-                        }else {
-                            UICreateProduct user = new UICreateProduct(inventory);
-                            dialog.setContentPane(user.getPanel1());
+                            JDialog dialog = new JDialog();
+                            dialog.setTitle("Login");
+                            if(people.getClass().equals(Client.class)){
+                                UIUser user = new UIUser((Client) people, inventory);
+                                dialog.setContentPane(user.getPanel1());
+                            }else {
+                                UICreateProduct user = new UICreateProduct(inventory);
+                                dialog.setContentPane(user.getPanel1());
+                            }
+                            dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+                            dialog.pack();
+                            dialog.setModal(true); // Establecer el diálogo como modal
+                            dialog.setVisible(true);
+
+                            // El código aquí no se ejecutará hasta que el diálogo se cierre
+                            System.out.println("El diálogo se ha cerrado.");
                         }
-                        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-                        dialog.pack();
-                        dialog.setModal(true); // Establecer el diálogo como modal
-                        dialog.setVisible(true);
-
-                        // El código aquí no se ejecutará hasta que el diálogo se cierre
-                        System.out.println("El diálogo se ha cerrado.");
-                    }
-                });
+                    });
                 }
             }
         });
     }
-
 }
