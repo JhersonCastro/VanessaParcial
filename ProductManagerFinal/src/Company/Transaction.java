@@ -9,6 +9,15 @@ import java.util.Date;
 public class Transaction {
     private Product product;
     private Date date;
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "product=" + product +
+                ", date=" + date +
+                '}';
+    }
+
     public Transaction(Product product){
         this.product = product;
         Calendar calendar = Calendar.getInstance();

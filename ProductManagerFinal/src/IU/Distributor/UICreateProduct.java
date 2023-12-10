@@ -1,12 +1,10 @@
-package InterfacesGraficas.Distributor;
+package IU.Distributor;
 
 import Company.Inventory;
 import Company.Product;
 import Enums.ID;
 import Exceptions.EmptyTextField;
-import Exceptions.ResourceNotFound;
-import InterfacesGraficas.Client.UIUser;
-import InterfacesGraficas.SignUpForm;
+import IU.Client.UIUser;
 import Users.Client;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,21 +39,6 @@ public class UICreateProduct {
                 }catch (NumberFormatException ex){
                     JOptionPane.showMessageDialog(null, ex.getMessage(), "NumberFormatException Error", JOptionPane.INFORMATION_MESSAGE);
                 }
-                SwingUtilities.invokeLater(new Runnable() {
-                    public void run() {
-                        UIUser signupForm = new UIUser(new Client("sadas","sad","sdf", "adsf", ID.CEDULA_CIUDADANIA), inventory);
-                        JDialog dialog = new JDialog();
-                        dialog.setTitle("Formulario");
-                        dialog.setContentPane(signupForm.getPanel1());
-                        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-                        dialog.pack();
-                        dialog.setModal(true); // Establecer el diálogo como modal
-                        dialog.setVisible(true);
-
-                        // El código aquí no se ejecutará hasta que el diálogo se cierre
-                        System.out.println("El diálogo se ha cerrado.");
-                    }
-                });
             }
         });
     }

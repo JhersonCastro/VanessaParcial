@@ -17,6 +17,14 @@ public abstract class People {
         TipoDeId = tipoDeId;
     }
 
-    public void menu(){
+
+    public String displayInfo(){
+        return "People{" +
+                "nombre='" + nombre + '\'' +
+                ", identificacion='" + identificacion + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", TipoDeId=" + TipoDeId +
+                '}';
     }
 }

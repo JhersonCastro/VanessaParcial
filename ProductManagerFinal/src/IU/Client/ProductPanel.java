@@ -1,4 +1,4 @@
-package InterfacesGraficas.Client;
+package IU.Client;
 
 import Company.Product;
 import Users.Client;

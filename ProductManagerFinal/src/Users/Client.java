@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 
-public class Client extends People{
-    private ArrayList<Transaction> transactions;
-    private @Getter double saldo = 2000000;
+public class Client extends People implements IUser{
+    private @Getter ArrayList<Transaction> transactions;
+    private @Getter double saldo = 200000;
     private @Getter @Setter Client referredClient = null;
     public void updateSaldo(double saldo){
         this.saldo += saldo;
@@ -26,4 +26,29 @@ public class Client extends People{
         transactions = new ArrayList<>();
     }
 
+
+    @Override
+    public String displayInfo() {
+        return super.toString()
+                + "Client{" +
+                "transactions=" + transactions +
+                ", saldo=" + saldo +
+                ", referredClient=" + referredClient +
+                '}';
+    }
+
+    @Override
+    public void login(String email, String password) {
+
+    }
+
+    @Override
+    public void logout() {
+
+    }
+
+    @Override
+    public void updateProfile(String name, String email) {
+
+    }
 }
