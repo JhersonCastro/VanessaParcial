@@ -3,7 +3,9 @@ package Company;
 import lombok.Getter;
 import lombok.Setter;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     @Setter @Getter
     private String ID, name, description;
     @Setter @Getter
@@ -16,12 +18,10 @@ public class Product {
         this.amount += amount;
     }
     public Product(String ID, String name, String description, double price, int amount){
-        this.ID = ID;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.amount = amount;
-    }
-
-
+             this.ID = ID;
+             this.name = name;
+             this.description = description;
+             this.price = price;
+             this.amount = amount;
+         }
 }

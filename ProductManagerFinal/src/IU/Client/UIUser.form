@@ -47,13 +47,7 @@
           <component id="f0200" class="javax.swing.JButton" binding="verMovimientosButton" default-binding="true">
             <constraints/>
             <properties>
-              <text value="ver movimientos"/>
-            </properties>
-          </component>
-          <component id="cdfe5" class="javax.swing.JButton" binding="salirButton" default-binding="true">
-            <constraints/>
-            <properties>
-              <text value="&amp;Salir"/>
+              <text value="Movimientos"/>
             </properties>
           </component>
         </children>

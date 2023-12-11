@@ -2,9 +2,11 @@ package IU;
 
 
 
-import Database.Database;
+import Database.*;
 import Enums.ID;
 import Exceptions.EmptyTextField;
+import Exceptions.ResourceNotFound;
+import Users.Client;
 import lombok.Getter;
 
 import javax.swing.*;
@@ -22,22 +24,29 @@ public class SignUpForm {
             @Override
             public void mouseClicked(MouseEvent e) {
                 try {
-                    database.register(txtNombre.getText(), txtIdentificacion.getText(), txtEmail.getText(), Arrays.toString(txtPassword.getPassword()), ID.values()[comboID.getSelectedIndex()]);
+                    Client newClient =  database.register(txtNombre.getText(), txtIdentificacion.getText(), txtEmail.getText(), Arrays.toString(txtPassword.getPassword()), ID.values()[comboID.getSelectedIndex()]);
+                    if(!txtReferido.getText().isEmpty()){
+                        String txt = txtReferido.getText();
+                        Client client = CheckUser.searchClientById(txt, database);
+                        if(client != null)
+                            database.getSystemRewards().reward(client, newClient);
+                    }
                 } catch (EmptyTextField ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage(), "EmptyTextField Error", JOptionPane.INFORMATION_MESSAGE);
+                } catch (ResourceNotFound ex) {
+                    JOptionPane.showMessageDialog(null, "No se encontro el usuario para referir", "EmptyTextField Error", JOptionPane.INFORMATION_MESSAGE);
+
                 }
             }
         });
     }
 
     private JButton registrarseButton;
-    private JButton salirButton;
     private JFormattedTextField txtNombre;
     private JComboBox comboID;
     private JFormattedTextField txtIdentificacion;
     private JFormattedTextField txtEmail;
     private JPasswordField txtPassword;
     private JFormattedTextField txtReferido;
-    private JPanel panel2;
 
 }

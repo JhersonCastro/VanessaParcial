@@ -3,10 +3,11 @@ package Database;
 import Exceptions.NoLenghtPassWord;
 import Exceptions.PatterIncorrect;
 
+import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public final class Checkers {
+public final class Checkers implements Serializable {
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
     private static final Pattern PASSWORD_PATTERN =

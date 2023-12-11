@@ -20,8 +20,6 @@ public class LoginForm {
     private JPasswordField txtPassword;
     private JButton confirmarButton;
     private JButton button1;
-    private JLabel lblCurrentOperation;
-    private JButton button2;
 
     public LoginForm(Database database, Inventory inventory) {
         button1.addMouseListener(new MouseAdapter() {

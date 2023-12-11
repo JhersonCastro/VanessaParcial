@@ -13,7 +13,6 @@ public class UIUser {
     private @Getter JPanel panel1;
     private JLabel lblUserName;
     private JLabel lblSaldo;
-    private JButton salirButton;
     private JButton verMovimientosButton;
     private JPanel ProductView;
     private JButton salimButton;

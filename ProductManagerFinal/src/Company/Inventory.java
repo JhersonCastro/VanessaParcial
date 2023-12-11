@@ -4,17 +4,18 @@ import Exceptions.EmptyTextField;
 import Exceptions.ResourceNotFound;
 import Users.Distributor;
 import lombok.Getter;
-import Company.Product;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Inventory {
+public class Inventory implements Serializable {
     private final int capacidad = 50;
     private @Getter ArrayList<Product> products;
-    private ArrayList<Distributor> distributors;
+    private final ArrayList<Distributor> distributors;
     public Inventory() {
         this.products = new ArrayList<>();
         products = new ArrayList<>();
+        distributors = new ArrayList<>();
     }
     public void addDistributor(Distributor distributor){
         distributors.add(distributor);
@@ -29,12 +30,16 @@ public class Inventory {
 
 
     public void setOrAddProduct(Product product) {
-        int index;
-        try{
-            index = searchIndexByID(product);
-            getProducts().set(index, product);
-        }catch (ResourceNotFound ex){
-            getProducts().add(product);
+        if(getProducts().size() <= capacidad){
+            int index;
+            try{
+                index = searchIndexByID(product);
+                getProducts().set(index, product);
+            }catch (ResourceNotFound ex){
+                getProducts().add(product);
+            }
+        }else{
+            System.out.println("Esta lleno el vector");
         }
     }
     private int searchIndexByID(Product product) throws ResourceNotFound{

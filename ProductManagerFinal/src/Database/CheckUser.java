@@ -2,12 +2,12 @@ package Database;
 
 import Exceptions.ResourceNotFound;
 import Users.Client;
-import Users.Distributor;
 import Users.People;
 
+import java.io.Serializable;
 import java.util.Optional;
 
-public class CheckUser {
+public class CheckUser implements Serializable {
     public static Client searchClientById(String ID, Database data) throws ResourceNotFound {
         Optional<People> theClient = data.getUsers().stream().filter(client -> client.getIdentificacion().equals(ID)).findFirst();
         if(theClient.orElse(null) == null){
@@ -21,9 +21,9 @@ public class CheckUser {
             throw new ResourceNotFound("El cliente no se encuentra");
         }
         try{
-            return (Client) theClient.orElse(null);
+            return theClient.orElse(null);
         }catch (Exception ex) {
-            return (Distributor) theClient.orElse(null);
+            return theClient.orElse(null);
         }
     }
 }

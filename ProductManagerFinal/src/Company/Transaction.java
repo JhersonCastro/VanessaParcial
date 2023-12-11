@@ -4,10 +4,11 @@ import Users.Client;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 @Getter @Setter
-public class Transaction {
+public class Transaction implements Serializable {
     private Product product;
     private Date date;
     private Client client;

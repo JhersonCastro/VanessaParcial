@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.Map;
 
 public class Client extends People implements IUser{
-    private @Getter ArrayList<Transaction> transactions;
+    private final @Getter ArrayList<Transaction> transactions;
     private @Getter double saldo = 200000;
     private @Getter @Setter Client referredClient = null;
     public void updateSaldo(double saldo){
