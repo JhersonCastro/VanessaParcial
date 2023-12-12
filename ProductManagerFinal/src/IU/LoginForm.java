@@ -47,7 +47,6 @@ public class LoginForm {
             public void mouseClicked(MouseEvent e) {
                 People people = database.logIn(txtEmail.getText(), Arrays.toString(txtPassword.getPassword()));
                 if(people != null){
-
                     SwingUtilities.invokeLater(new Runnable() {
                         public void run() {
 

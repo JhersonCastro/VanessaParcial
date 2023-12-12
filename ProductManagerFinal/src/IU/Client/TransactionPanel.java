@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-public class TransactionPanel {
+public final class TransactionPanel {
     public static JScrollPane createTransactionPanel(ArrayList<Transaction> transactions, JLabel dineroGastadoLbl) {
         JPanel panel = new JPanel();
         double dineroGastado = 0;

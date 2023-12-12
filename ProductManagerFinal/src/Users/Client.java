@@ -1,8 +1,10 @@
 package Users;
 
+import Company.Inventory;
 import Company.Product;
 import Company.Transaction;
 import Enums.ID;
+import IU.Client.UIUser;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -40,10 +42,8 @@ public class Client extends People implements IUser{
 
 
     @Override
-    public void logout() {
-        String lblExit = "Se ha salido como cliente";
-        JOptionPane.showMessageDialog(null, lblExit,
-                "Salida cliente", JOptionPane.INFORMATION_MESSAGE);
+    public void login(Inventory inventory) {
+        UIUser user = new UIUser(this,inventory);
     }
 
     @Override

@@ -21,10 +21,8 @@ public class Distributor extends People{
 
 
     @Override
-    public void logout() {
-        String lblExit = "Se ha salido como distribuidora";
-        JOptionPane.showMessageDialog(null, lblExit,
-                "Salida distribuidora", JOptionPane.INFORMATION_MESSAGE);
+    public void login(Inventory inventory) {
+        UICreateProduct createProduct = new UICreateProduct(inventory);
     }
 
     @Override

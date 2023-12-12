@@ -4,17 +4,10 @@ import Enums.ID;
 import lombok.Getter;
 
 import java.io.Serializable;
-
+@Getter
 public abstract class People implements Serializable {
-    @Getter
     private final String
-    nombre;
-    @Getter
-    private final String identificacion;
-    @Getter
-    private final String email;
-    @Getter
-    private final String password;
+    nombre, identificacion, email, password;
     private final ID TipoDeId;
 
     public People(String nombre, String identificacion, String email, String password, ID tipoDeId) {

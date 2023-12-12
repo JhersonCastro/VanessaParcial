@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class ProductPanel {
+public final class ProductPanel {
     public static JScrollPane createProductPanel(ArrayList<Product> products, Client client, JLabel lblSaldo) {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(products.size(), 3));
@@ -28,6 +28,7 @@ public class ProductPanel {
                         product.updateAmount(-1);
                         client.addTransactions(product);
                         lblSaldo.setText(String.valueOf(client.getSaldo()));
+                        amountLabel.setText(String.valueOf(product.getAmount()));
                     }
                 }
             });

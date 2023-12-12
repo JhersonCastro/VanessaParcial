@@ -14,13 +14,11 @@ public class UIUser {
     private JLabel lblUserName;
     private JLabel lblSaldo;
     private JButton verMovimientosButton;
-    private JPanel ProductView;
-    private JButton salimButton;
     public UIUser(Client client, Inventory inventory) {
         lblUserName.setText(client.getNombre());
         lblSaldo.setText(String.valueOf(client.getSaldo()));
         panel1.add(ProductPanel.createProductPanel(inventory.getProducts(), client, lblSaldo), BorderLayout.CENTER);
-        verMovimientosButton.addMouseListener(new MouseAdapter() {
+            verMovimientosButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 SwingUtilities.invokeLater(new Runnable() {

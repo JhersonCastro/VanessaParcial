@@ -1,6 +1,8 @@
 package Users;
 
+import Company.Inventory;
+
 public interface IUser {
-    void logout();
-    void updateProfile(String name, String email);
+    public void login(Inventory inventory);
+        void updateProfile(String name, String email);
 }

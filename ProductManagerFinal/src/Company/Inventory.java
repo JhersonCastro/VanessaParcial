@@ -13,7 +13,6 @@ public class Inventory implements Serializable {
     private @Getter ArrayList<Product> products;
     private final ArrayList<Distributor> distributors;
     public Inventory() {
-        this.products = new ArrayList<>();
         products = new ArrayList<>();
         distributors = new ArrayList<>();
     }
@@ -36,7 +35,8 @@ public class Inventory implements Serializable {
                 index = searchIndexByID(product);
                 getProducts().set(index, product);
             }catch (ResourceNotFound ex){
-                getProducts().add(product);
+                if(products.size() <= capacidad)
+                    getProducts().add(product);
             }
         }else{
             System.out.println("Esta lleno el vector");

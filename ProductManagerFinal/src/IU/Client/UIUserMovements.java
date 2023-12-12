@@ -8,7 +8,6 @@ import java.awt.*;
 
 public class UIUserMovements {
     private @Getter JPanel panel1;
-    private JButton volverAtrásButton;
     private JLabel saldoGastado;
     private JLabel lblUsername;
 
